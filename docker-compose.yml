@@ -1,0 +1,21 @@
+version: "3"
+services:
+  frontend:
+    image: sujeetrudra0608/my-private-repo:frontend
+    ports:
+      - "3000:3000"
+
+  mongodb:
+    image: mongo:5.0
+    volumes:
+      - mongodb-data:/data/db
+    ports:
+      - "27017:27017"
+
+  backend:
+    image: sujeetrudra0608/my-private-repo:backend
+    ports:
+      - "4001:4001"
+
+volumes:
+  mongodb-data:
